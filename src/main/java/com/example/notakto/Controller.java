@@ -131,6 +131,9 @@ public class Controller implements Initializable {
 
     @FXML
     void restartGame(ActionEvent event) {
+        finishedBoards[0]=false;
+        finishedBoards[1]=false;
+        finishedBoards[2]=false;
         buttons1.forEach(this::resetButton);
         buttons2.forEach(this::resetButton);
         buttons3.forEach(this::resetButton);
