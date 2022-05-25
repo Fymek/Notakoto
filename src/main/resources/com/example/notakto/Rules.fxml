@@ -48,6 +48,6 @@
          <font>
             <Font name="Calibri" size="15.0" />
          </font></Text>
-      <Button layoutX="22.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="Button" />
+      <Button fx:id="backButton" layoutX="715.0" layoutY="32.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="50.0" prefWidth="50.0" style="-fx-background-image: url(back.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;"/>
    </children>
 </AnchorPane>
