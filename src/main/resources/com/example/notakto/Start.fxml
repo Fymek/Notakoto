@@ -13,7 +13,7 @@
             <Font size="45.0" />
          </font>
       </Button>
-      <Button fx:id="RulesButton" layoutX="431.0" layoutY="322.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="248.0" style="-fx-background-image: url(rules.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
+      <Button fx:id="RulesButton" layoutX="431.0" layoutY="322.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="97.0" prefWidth="248.0" style="-fx-background-image: url(rules.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;">
          <font>
             <Font size="45.0" />
          </font>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-image: url(rules_background_placeholder.png); -fx-background-size: 100% 100%;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.notakto.StartController">
+   <children>
+      <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="60.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../rules_icon_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="612.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../rules_icon_2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="60.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../rules_icon_3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="612.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../rules_icon_4.png" />
+         </image>
+        </ImageView>
+      <Text fill="WHITE" layoutY="80.0" style="-fx-text-fill: #FFFFFF;" text="ZASADY" textAlignment="CENTER" wrappingWidth="800.0">
+         <font>
+            <Font name="Arial Black" size="80.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="221.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gra Notakto przeznaczona jest dla dwóch graczy" wrappingWidth="79.13671875000011" />
+      <Text fill="WHITE" layoutX="491.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gracze stawiają znaki &quot;X&quot; na trzech planszach" textAlignment="RIGHT" wrappingWidth="79.13671875" />
+      <Text fill="WHITE" layoutX="233.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gra trwa do momentu eliminacji wszystkich plansz (3 znaki &quot;X&quot; w rzędzie, kolumnie lub na ukos)" wrappingWidth="88.61526489257812" />
+      <Text fill="WHITE" layoutX="491.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gracz, który nie miał możliwości wykonania innego ruchu i wyeliminował ostatnią planszę PRZEGRYWA" textAlignment="RIGHT" wrappingWidth="100.13671875" />
+   </children>
+</AnchorPane>
