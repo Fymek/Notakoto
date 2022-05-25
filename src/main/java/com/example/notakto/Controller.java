@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+    private int tura=0;
     @FXML
     private Button button1;
     @FXML
@@ -74,6 +75,8 @@ public class Controller implements Initializable {
     private Text winnerText3;
     @FXML
     private Text titleText;
+    @FXML
+    private Text playerText;
     private ArrayList<Boolean> finishedBoards = new ArrayList<>(Arrays.asList(false,false,false));
     private ArrayList<Button> buttons1,buttons2,buttons3;
 
@@ -109,6 +112,7 @@ public class Controller implements Initializable {
         winnerText1.setText("1 PLANSZA");
         winnerText2.setText("2 PLANSZA");
         winnerText3.setText("3 PLANSZA");
+        playerText.setText("Tura gracza\nnumer 1");
     }
 
     public void resetButton(Button button) {
@@ -120,6 +124,8 @@ public class Controller implements Initializable {
         button.setOnMouseClicked(mouseEvent -> {
             setPlayerSymbol(button);
             button.setDisable(true);
+            tura++;
+            playerText.setText("Tura gracza\nnumer "+((tura%2)+1));
             checkIfGameIsOver();
         });
     }
@@ -152,5 +158,6 @@ public class Controller implements Initializable {
         if (!finishedBoards.get(0)) finishedBoards.set(0,checkSingleBoard(buttons1,winnerText1));
         if (!finishedBoards.get(1)) finishedBoards.set(1,checkSingleBoard(buttons2,winnerText2));
         if (!finishedBoards.get(2)) finishedBoards.set(2,checkSingleBoard(buttons3,winnerText3));
+        if(finishedBoards.get(0)&&finishedBoards.get(1)&&finishedBoards.get(2)) playerText.setText("Wygrał gracz "+((tura%2)+1)+".\nGra trwała "+tura+" tur.");
     }
 }

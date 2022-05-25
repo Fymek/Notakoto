@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Notakto v1.0.0");
         primaryStage.setScene(new Scene(root,800,600));
         primaryStage.setResizable(false);
         primaryStage.show();
