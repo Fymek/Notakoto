@@ -14,70 +14,13 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     @FXML
-    private Button button1;
+    private Button button1, button2, button3, button4, button5, button6, button7, button8, button9,
+                button11, button21, button31, button41, button51, button61, button71, button81, button91,
+                button111, button211, button311, button411, button511, button611, button711, button811, button911;
     @FXML
-    private Button button2;
-    @FXML
-    private Button button3;
-    @FXML
-    private Button button4;
-    @FXML
-    private Button button5;
-    @FXML
-    private Button button6;
-    @FXML
-    private Button button7;
-    @FXML
-    private Button button8;
-    @FXML
-    private Button button9;
-    @FXML
-    private Button button11;
-    @FXML
-    private Button button21;
-    @FXML
-    private Button button31;
-    @FXML
-    private Button button41;
-    @FXML
-    private Button button51;
-    @FXML
-    private Button button61;
-    @FXML
-    private Button button71;
-    @FXML
-    private Button button81;
-    @FXML
-    private Button button91;
-    @FXML
-    private Button button111;
-    @FXML
-    private Button button211;
-    @FXML
-    private Button button311;
-    @FXML
-    private Button button411;
-    @FXML
-    private Button button511;
-    @FXML
-    private Button button611;
-    @FXML
-    private Button button711;
-    @FXML
-    private Button button811;
-    @FXML
-    private Button button911;
-    @FXML
-    private  Text winnerText1;
-    @FXML
-    private Text winnerText2;
-    @FXML
-    private Text winnerText3;
-    @FXML
-    private Text titleText;
-    @FXML
-    private Text playerText;
-    private int tura=0;
+    private Text winnerText1, winnerText2, winnerText3, titleText, playerText;
+    private final int sizeOfBoard = 3;
+    private int tura = 0;
     private ArrayList<Boolean> finishedBoards = new ArrayList<>(Arrays.asList(false,false,false));
     private ArrayList<Button> buttons1,buttons2,buttons3;
 
@@ -145,24 +88,41 @@ public class Controller implements Initializable {
 
 
     public boolean checkSingleBoard(ArrayList<Button> buttons,Text winnerText) {
-        for (int a = 0; a < 8; a++) {
-            String line1 = switch (a) {
-                case 0 -> buttons.get(0).getText() + buttons.get(1).getText() + buttons.get(2).getText();// 0 1 2
-                case 1 -> buttons.get(3).getText() + buttons.get(4).getText() + buttons.get(5).getText();// 3 4 5
-                case 2 -> buttons.get(6).getText() + buttons.get(7).getText() + buttons.get(8).getText();// 6 7 8
-                case 3 -> buttons.get(0).getText() + buttons.get(4).getText() + buttons.get(8).getText();// 0 4 8
-                case 4 -> buttons.get(2).getText() + buttons.get(4).getText() + buttons.get(6).getText();// 2 4 6
-                case 5 -> buttons.get(0).getText() + buttons.get(3).getText() + buttons.get(6).getText();// 0 3 6
-                case 6 -> buttons.get(1).getText() + buttons.get(4).getText() + buttons.get(7).getText();// 1 4 7
-                case 7 -> buttons.get(2).getText() + buttons.get(5).getText() + buttons.get(8).getText();// 2 5 8
-                default -> null;
-            };
+
+            String line1;
+            for(int n=0; n<sizeOfBoard; n++)
+            {
+                for(int m=0; m<sizeOfBoard; m++)
+                {
+                    line1 = buttons.get(sizeOfBoard*n+m).getText() + buttons.get(sizeOfBoard*n+m).getText() + buttons.get(sizeOfBoard*n+m).getText();
+                    if (line1.equals("XXX")){
+                        winnerText.setText("Plansza skonczona!");
+                        buttons.forEach(button -> button.setDisable(true));
+                        return true;
+                    }
+                    line1 = buttons.get(sizeOfBoard*m+n).getText() + buttons.get(sizeOfBoard*m+n).getText() + buttons.get(sizeOfBoard*m+n).getText();
+                    if (line1.equals("XXX")){
+                        winnerText.setText("Plansza skonczona!");
+                        buttons.forEach(button -> button.setDisable(true));
+                        return true;
+                    }
+                }
+
+
+            }
+            line1 = buttons.get(0).getText() + buttons.get(sizeOfBoard+1).getText() + buttons.get(2*(sizeOfBoard+1)).getText();
             if (line1.equals("XXX")){
                 winnerText.setText("Plansza skonczona!");
                 buttons.forEach(button -> button.setDisable(true));
                 return true;
             }
-        }
+            line1 = buttons.get(sizeOfBoard-1).getText() + buttons.get(sizeOfBoard-1).getText() + buttons.get(2*(sizeOfBoard-1)).getText();
+            if (line1.equals("XXX")){
+                winnerText.setText("Plansza skonczona!");
+                buttons.forEach(button -> button.setDisable(true));
+                return true;
+            }
+
         return false;
     }
 
