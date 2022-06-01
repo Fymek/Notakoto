@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     private int tura=0;
+    private final int sizeOfBoard=3;
     @FXML
     private Button button1;
     @FXML
@@ -133,24 +134,32 @@ public class Controller implements Initializable {
     public void setPlayerSymbol(Button button) {button.setText("X");}
 
     public boolean checkSingleBoard(ArrayList<Button> buttons,Text winnerText) {
-        for (int a = 0; a < 8; a++) {
-            String line1 = switch (a) {
-                case 0 -> buttons.get(0).getText() + buttons.get(1).getText() + buttons.get(2).getText();// 0 1 2
-                case 1 -> buttons.get(3).getText() + buttons.get(4).getText() + buttons.get(5).getText();// 3 4 5
-                case 2 -> buttons.get(6).getText() + buttons.get(7).getText() + buttons.get(8).getText();// 6 7 8
-                case 3 -> buttons.get(0).getText() + buttons.get(4).getText() + buttons.get(8).getText();// 0 4 8
-                case 4 -> buttons.get(2).getText() + buttons.get(4).getText() + buttons.get(6).getText();// 2 4 6
-                case 5 -> buttons.get(0).getText() + buttons.get(3).getText() + buttons.get(6).getText();// 0 3 6
-                case 6 -> buttons.get(1).getText() + buttons.get(4).getText() + buttons.get(7).getText();// 1 4 7
-                case 7 -> buttons.get(2).getText() + buttons.get(5).getText() + buttons.get(8).getText();// 2 5 8
-                default -> null;
-            };
-            if (line1.equals("XXX")){
+        StringBuilder line1, line2, line3= new StringBuilder(), line4= new StringBuilder();
+        StringBuilder wintext= new StringBuilder();
+        wintext.append("X".repeat(sizeOfBoard));
+        for(int n = 0; n<sizeOfBoard; n++)
+        {
+            line1 = new StringBuilder();
+            line2 = new StringBuilder();
+            for(int m = 0; m<sizeOfBoard; m++)
+            {
+                line1.append(buttons.get(sizeOfBoard * n + m).getText());
+                line2.append(buttons.get(sizeOfBoard * m + n).getText());
+            }
+            line3.append(buttons.get(n * (sizeOfBoard + 1)).getText());
+            line4.append(buttons.get((n+1) * (sizeOfBoard - 1)).getText());
+            if (line1.toString().equals(wintext.toString()) || line2.toString().equals(wintext.toString())){
                 winnerText.setText("Plansza skonczona!");
                 buttons.forEach(button -> button.setDisable(true));
                 return true;
             }
         }
+        if (line3.toString().equals(wintext.toString()) || line4.toString().equals(wintext.toString())){
+            winnerText.setText("Plansza skonczona!");
+            buttons.forEach(button -> button.setDisable(true));
+            return true;
+        }
+
         return false;
     }
 
