@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-image: url(tlo_v2.gif); -fx-background-size: 100% 100%;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.notakto.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-image: url(tlov3.jpg); -fx-background-size: 100% 100%;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.notakto.Controller">
     <children>
         <FlowPane layoutX="14.0" layoutY="67.0" prefHeight="227.0" prefWidth="238.0">
             <children>
@@ -51,7 +51,7 @@
                 <Font size="39.0" />
             </font>
         </Text>
-        <Button layoutX="373.0" layoutY="546.0" mnemonicParsing="false" onAction="#restartGame" text="Restart" />
+        <Button layoutX="331.0" layoutY="520.0" mnemonicParsing="false" onAction="#restartGame" prefHeight="58.0" prefWidth="138.0" style="-fx-background-image: url(reset.png); -fx-background-size: 100% 100%; -fx-background-color: transparent;" />
       <FlowPane layoutX="281.0" layoutY="67.0" prefHeight="227.0" prefWidth="238.0">
          <children>
             <Button fx:id="button11" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0">
@@ -147,7 +147,7 @@
             <Font size="23.0" />
          </font>
       </Text>
-      <Text fx:id="playerText" fill="WHITE" layoutX="173.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke: black; -fx-stroke-width: 2;" text="Tura gracza&#10;numer 1" textAlignment="CENTER" wrappingWidth="452.9443359375">
+      <Text fx:id="playerText" fill="WHITE" layoutX="173.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke: black; -fx-stroke-width: 2;" text="Tura gracza&#10;Zielonego" textAlignment="CENTER" wrappingWidth="452.9443359375">
          <font>
             <Font size="39.0" />
          </font>
