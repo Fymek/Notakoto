@@ -89,39 +89,31 @@ public class Controller implements Initializable {
 
     public boolean checkSingleBoard(ArrayList<Button> buttons,Text winnerText) {
 
-            String line1;
-            for(int n=0; n<sizeOfBoard; n++)
+        StringBuilder line1, line2, line3= new StringBuilder(), line4= new StringBuilder();
+        StringBuilder wintext= new StringBuilder();
+        wintext.append("X".repeat(sizeOfBoard));
+        for(int n = 0; n<sizeOfBoard; n++)
+        {
+            line1 = new StringBuilder();
+            line2 = new StringBuilder();
+            for(int m = 0; m<sizeOfBoard; m++)
             {
-                for(int m=0; m<sizeOfBoard; m++)
-                {
-                    line1 = buttons.get(sizeOfBoard*n+m).getText() + buttons.get(sizeOfBoard*n+m).getText() + buttons.get(sizeOfBoard*n+m).getText();
-                    if (line1.equals("XXX")){
-                        winnerText.setText("Plansza skonczona!");
-                        buttons.forEach(button -> button.setDisable(true));
-                        return true;
-                    }
-                    line1 = buttons.get(sizeOfBoard*m+n).getText() + buttons.get(sizeOfBoard*m+n).getText() + buttons.get(sizeOfBoard*m+n).getText();
-                    if (line1.equals("XXX")){
-                        winnerText.setText("Plansza skonczona!");
-                        buttons.forEach(button -> button.setDisable(true));
-                        return true;
-                    }
-                }
-
-
+                line1.append(buttons.get(sizeOfBoard * n + m).getText());
+                line2.append(buttons.get(sizeOfBoard * m + n).getText());
             }
-            line1 = buttons.get(0).getText() + buttons.get(sizeOfBoard+1).getText() + buttons.get(2*(sizeOfBoard+1)).getText();
-            if (line1.equals("XXX")){
+            line3.append(buttons.get(n * (sizeOfBoard + 1)).getText());
+            line4.append(buttons.get((n+1) * (sizeOfBoard - 1)).getText());
+            if (line1.toString().equals(wintext.toString()) || line2.toString().equals(wintext.toString())){
                 winnerText.setText("Plansza skonczona!");
                 buttons.forEach(button -> button.setDisable(true));
                 return true;
             }
-            line1 = buttons.get(sizeOfBoard-1).getText() + buttons.get(sizeOfBoard-1).getText() + buttons.get(2*(sizeOfBoard-1)).getText();
-            if (line1.equals("XXX")){
-                winnerText.setText("Plansza skonczona!");
-                buttons.forEach(button -> button.setDisable(true));
-                return true;
-            }
+        }
+        if (line3.toString().equals(wintext.toString()) || line4.toString().equals(wintext.toString())){
+            winnerText.setText("Plansza skonczona!");
+            buttons.forEach(button -> button.setDisable(true));
+            return true;
+        }
 
         return false;
     }
