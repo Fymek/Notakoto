@@ -13,6 +13,10 @@ import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+
+    private int tura=0;
+    private final int sizeOfBoard=3;
+
     @FXML
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9,
                 button11, button21, button31, button41, button51, button61, button71, button81, button91,
@@ -88,7 +92,6 @@ public class Controller implements Initializable {
 
 
     public boolean checkSingleBoard(ArrayList<Button> buttons,Text winnerText) {
-
         StringBuilder line1, line2, line3= new StringBuilder(), line4= new StringBuilder();
         StringBuilder wintext= new StringBuilder();
         wintext.append("X".repeat(sizeOfBoard));
