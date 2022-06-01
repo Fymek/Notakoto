@@ -14,9 +14,6 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
-    private int tura=0;
-    private final int sizeOfBoard=3;
-
     @FXML
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9,
                 button11, button21, button31, button41, button51, button61, button71, button81, button91,
