@@ -20,7 +20,7 @@ public class Controller implements Initializable {
                     button21, button22, button23, button24, button25, button26, button27, button28, button29,button210, button211, button212, button213, button214, button215, button216;
     @FXML
     private Text winnerText1, winnerText2, winnerText3, titleText, playerText;
-    private final int sizeOfBoard = 3;
+    private final int sizeOfBoard = 4;
     private int tura = 0;
     private ArrayList<Boolean> finishedBoards = new ArrayList<>(Arrays.asList(false,false,false));
     private ArrayList<Button> buttons1,buttons2,buttons3;
