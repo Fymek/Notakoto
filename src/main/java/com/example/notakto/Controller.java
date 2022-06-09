@@ -15,9 +15,9 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     @FXML
-    private Button button1, button2, button3, button4, button5, button6, button7, button8, button9,
-                button11, button21, button31, button41, button51, button61, button71, button81, button91,
-                button111, button211, button311, button411, button511, button611, button711, button811, button911;
+    private Button  button01, button02, button03, button04, button05, button06, button07, button08, button09,button010, button011, button012, button013, button014, button015, button016,
+                    button11, button12, button13, button14, button15, button16, button17, button18, button19,button110, button111, button112, button113, button114, button115, button116,
+                    button21, button22, button23, button24, button25, button26, button27, button28, button29,button210, button211, button212, button213, button214, button215, button216;
     @FXML
     private Text winnerText1, winnerText2, winnerText3, titleText, playerText;
     private final int sizeOfBoard = 3;
@@ -27,9 +27,9 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        buttons1 = new ArrayList<>(Arrays.asList(button1, button2, button3, button4, button5, button6, button7, button8, button9));
-        buttons2 = new ArrayList<>(Arrays.asList(button11, button21, button31, button41, button51, button61, button71, button81, button91));
-        buttons3 = new ArrayList<>(Arrays.asList(button111, button211, button311, button411, button511, button611, button711, button811, button911));
+        buttons1 = new ArrayList<>(Arrays.asList(button01, button02, button03, button04, button05, button06, button07, button08, button09,button010, button011, button012, button013, button014, button015, button016));
+        buttons2 = new ArrayList<>(Arrays.asList(button11, button12, button13, button14, button15, button16, button17, button18, button19,button110, button111, button112, button113, button114, button115, button116));
+        buttons3 = new ArrayList<>(Arrays.asList(button21, button22, button23, button24, button25, button26, button27, button28, button29,button210, button211, button212, button213, button214, button215, button216));
 
         buttons1.forEach(button -> {
             setupButton(button);
